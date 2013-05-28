@@ -5,9 +5,13 @@ by Jason Costello, @jsncostello
 
 @import url(pygment_trac.css);
 
+* {
+  box-sizing: border-box;
+}
 /*******************************************************************************
 MeyerWeb Reset
 *******************************************************************************/
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -125,6 +129,11 @@ a {
   -ms-transition: text-shadow 0.5s ease;
 }
 
+a:focus {
+  color: #fff;
+  background-color: #0090ff;
+}
+
 #main_content a:hover {
   color: #0069ba;
   text-shadow: #0090ff 0px 0px 2px;
@@ -238,19 +247,19 @@ table {
   border: 1px solid #373737;
   margin-bottom: 20px;
   text-align: left;
- }
+}
 
 th {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
   background: #373737;
   color: #fff;
- }
+}
 
 td {
   padding: 10px;
   border: 1px solid #373737;
- }
+}
 
 form {
   background: #f2f2f2;
@@ -260,6 +269,24 @@ form {
 img {
   width: 100%;
   max-width: 100%;
+}
+
+.link-to-repo {
+  background-color: #0090ff;
+  border-radius: 10px;
+  color: #fff;
+  padding: 2px 5px;
+}
+
+.link-to-repo:hover {
+  background-color: #0045ee;
+  color: #fff;
+}
+
+.repo-def {
+  float: left;
+  padding: 0 15px;
+  width: 50%;
 }
 
 /*******************************************************************************
@@ -275,6 +302,12 @@ Full-Width Styles
   max-width: 640px;
   padding: 20px 10px;
   margin: 0 auto;
+}
+
+.inner:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #forkme_banner {
@@ -360,7 +393,7 @@ Full-Width Styles
   background: url(../images/sprite_download.png) no-repeat top right;
 }
 
-#main_content_wrap {
+.main_content_wrap {
   background: #f2f2f2;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
@@ -374,7 +407,13 @@ Full-Width Styles
   background: #212121;
 }
 
+.container {
+  max-width: 940px;
+}
 
+.row {
+  margin: 0 -15px;
+}
 
 /*******************************************************************************
 Small Device Styles
@@ -382,7 +421,6 @@ Small Device Styles
 
 @media screen and (max-width: 480px) {
   body {
-    font-size:14px;
   }
 
   #downloads {
@@ -395,7 +433,7 @@ Small Device Styles
   }
 
   #project_title {
-  font-size: 32px;
+    font-size: 32px;
   }
 
   h1 {
@@ -428,4 +466,13 @@ Small Device Styles
     font-size: 11px;
   }
 
+  .repo-def {
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
+
+  .row {
+    margin: 0;
+  }
 }
